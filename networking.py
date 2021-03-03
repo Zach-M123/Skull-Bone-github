@@ -14,9 +14,19 @@ if __name__ == "__main__":
 def server_machine():
     remote_server = "google.com"
     remote_ipaddr = socket.gethostbyname(remote_server)
-    print("Remote Server: %s" %remote_server + '\n' + "remote_ipaddr: %s" %remote_ipaddr)
+    print("Google Server: %s" %remote_server + '\n' + "IP address: %s" %remote_ipaddr)
 
 if __name__ == "__main__":
     server_machine()
 
+# create a function() for remote using notion of try and except
+def get_remote_server():
+    remote_server = "cisco.com"
+    try:
+        print("Cisco Server: %s" %remote_server + '\n' + "IP address: %s" %socket.gethostbyname(remote_server))
+    except socket.error + err_msg:
+        print("%s: %s" %remote_server + err_msg)
+
+if __name__ == "__main__":
+    get_remote_server()
 
